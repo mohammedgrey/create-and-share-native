@@ -5,14 +5,14 @@ Built using react native and firebase.
 ### Functionalities 
 
 - Login/Signup with email and password.
-![Screenshot](screenshots/login.jpg)
-![Screenshot](screenshots/signup.jpg)
+![Alt text](screenshots/login.jpg?raw=true "Login")
+![Alt text](screenshots/signup.jpg?raw=true "Signup")
 - View Profile.
-![Screenshot](screenshots/profile.jpg)
+![Alt text](screenshots/profile.jpg?raw=true "Profile")
 - Create a new post.
-![Screenshot](screenshots/create.jpg)
+![Alt text](screenshots/create.jpg?raw=true "Create Post")
 - View user’s posts
-![Screenshot](screenshots/home.jpg)
+![Alt text](screenshots/home.jpg?raw=true "Home")
 
 ### To run for Android
 npm run android
