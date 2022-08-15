@@ -9,7 +9,7 @@ Built using react native and firebase.
 <img src="screenshots/login.jpg" width="375"/>
 <img src="screenshots/signup.jpg" width="375"/>
 
-- View Profile.
+- View profile.
 
 <img src="screenshots/profile.jpg" width="375"/>
 
@@ -19,7 +19,7 @@ Built using react native and firebase.
 <img src="screenshots/create.jpg" width="375"/>
 
 
-- View users' posts
+- View users' posts.
 
 <img src="screenshots/home.jpg" width="375"/>
 
