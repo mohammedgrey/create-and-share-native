@@ -1,0 +1,15 @@
+{
+  "rules": {
+    "posts": {
+      ".read": "auth != null",
+      "$post_id": {
+        ".write": "auth != null && data.child('ownerId').val() == auth.uid",
+        "likes": {
+          "$liker_id": {
+            ".write": "auth != null && $liker_id == auth.uid"
+          }
+        }
+      }
+    }
+  }
+}
