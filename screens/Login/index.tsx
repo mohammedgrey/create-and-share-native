@@ -1,9 +1,10 @@
-import React, {useState} from 'react';
-import {TextInput, TouchableOpacity, View, Text} from 'react-native';
-import styles from './styles';
 import auth, {FirebaseAuthTypes} from '@react-native-firebase/auth';
+import React, {useState} from 'react';
+import {Text, TextInput, TouchableOpacity, View} from 'react-native';
 import Button from '../../components/Button';
+import commonStyles from '../../styles.global';
 import {friendifyFirebaseMessage} from '../../utils/helpers';
+import styles from './styles';
 
 const LoginScreen = () => {
   const [email, setEmail] = useState('');
@@ -26,7 +27,7 @@ const LoginScreen = () => {
         signingUp
           ? 'createUserWithEmailAndPassword'
           : 'signInWithEmailAndPassword'
-      ](email, password)
+      ](email.trim(), password)
       .catch((err: FirebaseAuthTypes.NativeFirebaseAuthError) => {
         setError(friendifyFirebaseMessage(err.message));
       })
@@ -34,6 +35,17 @@ const LoginScreen = () => {
   };
   return (
     <View style={styles.container}>
+      <View style={styles.header}>
+        <Text style={commonStyles.title}>
+          {signingUp ? 'Sign Up' : 'Log In'}
+        </Text>
+        <Text style={commonStyles.caption}>
+          {signingUp
+            ? 'Create your account to start creating and sharing'
+            : 'Login and start creating now'}
+        </Text>
+      </View>
+
       <View style={styles.card}>
         <TextInput
           style={styles.input}
@@ -54,14 +66,18 @@ const LoginScreen = () => {
             placeholder="Confirm Password"
           />
         )}
+        {Boolean(confirmPassword) && confirmPassword !== password && (
+          <Text style={styles.errorText}>{"Passwords don't match"}</Text>
+        )}
       </View>
 
       {Boolean(error) && <Text style={styles.errorText}>{error}</Text>}
 
       <Button
         disabled={loading || invalidInput}
+        loading={loading}
         onPress={() => loginOrSignup()}>
-        <Text>{loading ? 'Loading...' : signingUp ? 'Sign Up' : 'Log In'}</Text>
+        {signingUp ? 'Sign Up' : 'Log In'}
       </Button>
 
       <View style={styles.caption}>

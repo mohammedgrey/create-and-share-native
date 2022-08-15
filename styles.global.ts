@@ -1,6 +1,7 @@
 import {StyleSheet} from 'react-native';
+import {colors} from './config';
 
-export default StyleSheet.create({
+const commonStyles = StyleSheet.create({
   shadow: {
     //For Android
     shadowColor: '#7F5DF0',
@@ -13,4 +14,18 @@ export default StyleSheet.create({
     //For IOS
     elevation: 5,
   },
+  title: {
+    fontSize: 25,
+    color: colors.primary.main,
+    fontWeight: '900',
+    textAlign: 'center',
+    marginBottom: 10,
+    textTransform: 'uppercase',
+  },
+  caption: {
+    fontSize: 12,
+    color: '#999999',
+    textAlign: 'center',
+  },
 });
+export default commonStyles;

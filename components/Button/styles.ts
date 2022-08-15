@@ -7,9 +7,11 @@ export default StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 10,
     borderRadius: 5,
+    alignSelf: 'stretch',
   },
   text: {
     color: '#FFFFFF',
     textAlign: 'center',
+    textTransform: 'uppercase',
   },
 });

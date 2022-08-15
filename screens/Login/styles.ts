@@ -5,6 +5,7 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    padding: 10,
   },
   card: {
     ...commonStyles.shadow,
@@ -13,7 +14,6 @@ export default StyleSheet.create({
     alignSelf: 'stretch',
     textAlign: 'center',
     marginBottom: 20,
-    marginHorizontal: 10,
     borderRadius: 5,
   },
   input: {
@@ -30,6 +30,10 @@ export default StyleSheet.create({
   },
   errorText: {
     color: 'rgb(255, 0, 0)',
+    marginBottom: 10,
+    textAlign: 'center',
+  },
+  header: {
     marginBottom: 20,
   },
 });
