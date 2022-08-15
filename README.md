@@ -19,7 +19,7 @@ Built using react native and firebase.
 <img src="screenshots/create.jpg" width="375"/>
 
 
-- View user’s posts
+- View users' posts
 
 <img src="screenshots/home.jpg" width="375"/>
 
