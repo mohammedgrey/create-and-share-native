@@ -6,7 +6,7 @@ A simple social application for users to create and share content together. Buil
 
 - Login/Signup with email and password.
 
-<img src="screenshots/login.jpg" width="375"/> | <img src="screenshots/signup.jpg" width="375"/>
+<img src="screenshots/login.jpg" width="375" height="667"/> <img src="screenshots/signup.jpg" width="375" height="667"/>
 
 - View profile.
 
