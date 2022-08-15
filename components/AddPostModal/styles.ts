@@ -9,5 +9,7 @@ export default StyleSheet.create({
     marginBottom: 20,
     marginTop: 10,
     height: 150,
+    textAlignVertical: 'top',
+    borderRadius: 5,
   },
 });

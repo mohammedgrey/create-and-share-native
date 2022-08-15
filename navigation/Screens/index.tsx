@@ -3,7 +3,6 @@ import React from 'react';
 import AddPostButton from '../../components/AddPostButton';
 import PostModal from '../../components/AddPostModal';
 import HomeScreen from '../../screens/Home';
-import ProfileScreen from '../../screens/Profile';
 import {TABS} from '../config';
 
 const Stack = createNativeStackNavigator();
@@ -18,7 +17,6 @@ const NavigationScreens = () => {
           name={TABS.POSTS}
           component={HomeScreen}
         />
-        <Stack.Screen name={TABS.POST} component={ProfileScreen} />
       </Stack.Group>
       <Stack.Group
         screenOptions={{presentation: 'modal', animation: 'slide_from_bottom'}}>

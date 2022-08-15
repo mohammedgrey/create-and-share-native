@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
-  items: {flexGrow: 1},
+  container: {padding: 10},
 });

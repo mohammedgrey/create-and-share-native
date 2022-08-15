@@ -1,7 +1,26 @@
+import {BottomTabNavigationOptions} from '@react-navigation/bottom-tabs';
+import {ParamListBase, RouteProp} from '@react-navigation/native';
+
 export const colors = {
   primary: {
     main: '#4c1a6b',
-    dark: '#11051e',
+    dark: '#34124a',
     light: '#957bd7',
   },
+};
+
+export const screenOptions:
+  | BottomTabNavigationOptions
+  | ((props: {
+      route: RouteProp<ParamListBase, string>;
+      navigation: any;
+    }) => BottomTabNavigationOptions) = {
+  headerTintColor: '#FFFFFF',
+  headerStyle: {
+    backgroundColor: colors.primary.dark,
+  },
+  headerBackgroundContainerStyle: {backgroundColor: colors.primary.dark},
+  tabBarActiveBackgroundColor: '#DDDDDD',
+  tabBarActiveTintColor: '#000000',
+  tabBarInactiveTintColor: '#000000',
 };

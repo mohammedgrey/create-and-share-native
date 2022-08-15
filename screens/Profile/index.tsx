@@ -23,9 +23,8 @@ const ProfileScreen = () => {
         <InfoLine label="Name" value={currentUser?.displayName ?? 'NA'} />
         <InfoLine label="Phone" value={currentUser?.phoneNumber ?? 'NA'} />
       </View>
-      <View style={styles.bottom}>
-        <Button onPress={() => auth().signOut()}>Sign Out</Button>
-      </View>
+
+      <Button onPress={() => auth().signOut()}>Sign Out</Button>
     </View>
   );
 };

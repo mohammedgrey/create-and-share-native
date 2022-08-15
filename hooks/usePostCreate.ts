@@ -4,7 +4,9 @@ import type {Post, PostInput} from '../types/firebase';
 
 export const usePostCreate = () => {
   const createPost = (input: PostInput) => {
-    const userId = auth().currentUser?.uid;
+    const currentUser = auth().currentUser;
+    const userId = currentUser?.uid;
+    const userName = currentUser?.email?.split('@')[0];
 
     if (!userId) {
       return;
@@ -15,6 +17,7 @@ export const usePostCreate = () => {
       createdAt: Date.now(),
       updatedAt: Date.now(),
       ownerId: userId,
+      ownerName: userName,
       likes: {},
     };
 

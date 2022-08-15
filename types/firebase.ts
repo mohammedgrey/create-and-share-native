@@ -3,6 +3,7 @@ export type Post = BasePost & (TextPost | ImagePost | VideoPost);
 export type BasePost = {
   id: string;
   ownerId: string;
+  ownerName?: string;
   type: PostType;
   createdAt: number;
   updatedAt: number;

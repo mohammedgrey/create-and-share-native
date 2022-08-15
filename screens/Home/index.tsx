@@ -3,11 +3,12 @@ import {FlatList, View} from 'react-native';
 import PostItem from '../../components/Post';
 import {usePostList} from '../../hooks/usePostList';
 import type {Post, TextPost} from '../../types/firebase';
+import styles from './styles';
 
 const HomeScreen = () => {
   const posts = usePostList();
   return (
-    <View>
+    <View style={styles.container}>
       <FlatList
         data={posts}
         keyExtractor={item => item.id}

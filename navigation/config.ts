@@ -1,7 +1,6 @@
 export enum TABS {
-  HOME = 'Create And Share',
+  HOME = 'Home',
   PROFILE = 'Profile',
-  POSTS = 'Posts',
-  POST = 'Post',
+  POSTS = 'Creations',
   POST_MODAL = 'Create New',
 }

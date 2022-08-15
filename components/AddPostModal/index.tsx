@@ -14,6 +14,7 @@ const PostModal: React.FC<{
   const navigation = useNavigation();
   const {post}: {post?: TextPost} = route.params;
   const [text, setText] = useState(post?.text || '');
+
   const handleAddPost = () => {
     createPost({
       type: PostType.TEXT_POST,
@@ -21,16 +22,19 @@ const PostModal: React.FC<{
     });
     navigation.goBack();
   };
+
   return (
     <View style={styles.container}>
-      <Text>Write your post here</Text>
+      <Text>Create your post here...</Text>
       <TextInput
         multiline
         style={styles.input}
         value={text}
         onChange={event => setText(event.nativeEvent.text)}
       />
-      <Button onPress={handleAddPost}>{post ? 'update' : 'post'}</Button>
+      <Button disabled={!text} onPress={handleAddPost}>
+        Share
+      </Button>
     </View>
   );
 };
