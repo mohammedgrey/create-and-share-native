@@ -27,5 +27,10 @@ const commonStyles = StyleSheet.create({
     color: '#999999',
     textAlign: 'center',
   },
+  placeAtTheEnd: {
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'flex-end',
+  },
 });
 export default commonStyles;
