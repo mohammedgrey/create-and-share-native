@@ -70,6 +70,8 @@ export const usePostItem = (item: Post) => {
       });
   };
 
+  const likeOrUnlike = post.likedByMe ? unlike : like;
+
   const updatePost = (input: PostInput): Promise<void> => {
     const userId = auth().currentUser?.uid;
 
@@ -93,6 +95,7 @@ export const usePostItem = (item: Post) => {
     post,
     like,
     unlike,
+    likeOrUnlike,
     updatePost,
   };
 };
