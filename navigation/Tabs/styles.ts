@@ -10,8 +10,4 @@ export default StyleSheet.create({
     bottom: 20,
     ...commonStyles.shadow,
   },
-  icon: {
-    width: 20,
-    height: 20,
-  },
 });

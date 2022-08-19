@@ -7,6 +7,11 @@ export const colors = {
     dark: '#34124a',
     light: '#957bd7',
   },
+  grey: {
+    main: '#999999',
+    dark: '#444444',
+    light: '#DDDDDD',
+  },
 };
 
 export const screenOptions:
