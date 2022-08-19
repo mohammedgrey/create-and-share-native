@@ -8,19 +8,25 @@ A simple social application for users to create and share content together. Buil
 
 <img src="screenshots/login.jpg" width="375" height="667"/> <img src="screenshots/signup.jpg" width="375" height="667"/>
 
-- View profile.
+- View profile
 
-<img src="screenshots/profile.jpg" width="375"/>
-
-
-- Create a new post.
-
-<img src="screenshots/create.jpg" width="375"/>
+<img src="screenshots/profile.jpg" width="375" height="667"/>
 
 
-- View users' posts.
+- Create a new post/Update an existing post.
 
-<img src="screenshots/home.jpg" width="375"/>
+<img src="screenshots/create.jpg" width="375" height="667"/> <img src="screenshots/update.jpg" width="375" height="667"/>
+
+
+- View posts/Like posts/Edit my own posts 
+
+<img src="screenshots/home.jpg" width="375" height="667"/>
+
+
+- View single post/View Likes.
+
+<img src="screenshots/view.jpg" width="375" height="667"/>
+
 
 ### Dependencies
 
