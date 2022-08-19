@@ -39,6 +39,7 @@ export type VideoPost = {
 
 export type Like = {
   ownerId: string;
+  ownerName: string;
   createdAt: number;
 };
 

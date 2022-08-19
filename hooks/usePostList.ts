@@ -8,13 +8,16 @@ export const usePostList = () => {
   useEffect(() => {
     database()
       .ref('posts')
+      .orderByChild('updatedAt')
       .on(
         'value',
         snapShot => {
-          const val = Object.entries(
-            (snapShot.val() || {}) as Record<string, Post>,
-          ).map(([id, post]) => ({...post, id}));
-          setPosts(val);
+          const postsValue: Post[] = [];
+          snapShot.forEach(child => {
+            postsValue.unshift({...child.val(), id: child.key});
+            return undefined;
+          });
+          setPosts(postsValue);
         },
         err => {
           console.error(err);

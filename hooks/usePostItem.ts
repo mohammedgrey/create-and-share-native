@@ -1,15 +1,25 @@
-import {useState} from 'react';
+import {useEffect, useMemo, useState} from 'react';
 import auth from '@react-native-firebase/auth';
 import database from '@react-native-firebase/database';
 import type {Post, PostItem, PostInput, Like} from '../types/firebase';
+import {extractUsernameFromEmail} from '../utils/helpers';
 
 export const usePostItem = (item: Post) => {
-  const [post, setPost] = useState<Post & PostItem>({
-    ...item,
-    likesCount: Object.keys(item.likes || {}).length,
-    likedByMe: !!item.likes?.[auth().currentUser?.uid ?? ''],
-    myPost: item.ownerId === auth().currentUser?.uid,
-  });
+  const initialItem = useMemo(
+    () => ({
+      ...item,
+      likesCount: Object.keys(item.likes || {}).length,
+      likedByMe: !!item.likes?.[auth().currentUser?.uid ?? ''],
+      myPost: item.ownerId === auth().currentUser?.uid,
+    }),
+    [item],
+  );
+  const [post, setPost] = useState<Post & PostItem>(initialItem);
+
+  //Update the post each time the item changes
+  useEffect(() => {
+    setPost(initialItem);
+  }, [initialItem]);
 
   const like = (): Promise<void> => {
     console.log(`You liked post ${post.id}`);
@@ -19,8 +29,11 @@ export const usePostItem = (item: Post) => {
       return Promise.resolve();
     }
 
+    const userName = extractUsernameFromEmail(auth().currentUser?.email ?? '');
+
     const likeObj: Like = {
       ownerId: userId,
+      ownerName: userName,
       createdAt: Date.now(),
     };
     return database()
