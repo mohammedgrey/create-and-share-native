@@ -32,5 +32,11 @@ const commonStyles = StyleSheet.create({
     justifyContent: 'flex-end',
     alignItems: 'flex-end',
   },
+  mr: {
+    marginRight: 10,
+  },
+  ml: {
+    marginLeft: 10,
+  },
 });
 export default commonStyles;

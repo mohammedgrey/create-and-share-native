@@ -1,11 +1,10 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React from 'react';
-import {Image} from 'react-native';
 import {screenOptions} from '../../config';
 import ProfileScreen from '../../screens/Profile';
 import {TABS} from '../config';
 import NavigationScreens from '../Screens';
-import styles from './styles';
+import Icon from 'react-native-vector-icons/Octicons';
 
 const Tab = createBottomTabNavigator();
 
@@ -14,23 +13,25 @@ const NavigationTabs = () => {
     {
       component: NavigationScreens,
       name: TABS.HOME,
-      imageScr: require('../../assets/icons/home.png'),
+      iconName: 'home',
     },
     {
       component: ProfileScreen,
       name: TABS.PROFILE,
-      imageScr: require('../../assets/icons/user.png'),
+      iconName: 'person',
     },
   ];
 
   return (
     <Tab.Navigator screenOptions={screenOptions} initialRouteName={TABS.HOME}>
-      {tabs.map(({name, component, imageScr}) => {
+      {tabs.map(({name, component, iconName}) => {
         return (
           <Tab.Screen
             key={name}
             options={{
-              tabBarIcon: _ => <Image style={styles.icon} source={imageScr} />,
+              tabBarIcon: _ => (
+                <Icon name={iconName} size={20} color="#000000" />
+              ),
             }}
             name={name}
             component={component}
